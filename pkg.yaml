@@ -28,7 +28,7 @@ steps:
         make DESTDIR=/rootfs install
         rm -fr /rootfs/usr/local{include,lib,share}
 finalize:
-  - from: /rootfs
-    to: /rootfs
+  - from: /rootfs/usr/local/bin/dd
+    to: /rootfs/usr/local/bin/dd
   - from: /pkg/manifest.yaml
     to: /

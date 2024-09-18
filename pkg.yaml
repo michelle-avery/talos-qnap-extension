@@ -26,8 +26,9 @@ steps:
       - |
         cd build
         make DESTDIR=/rootfs install
+        rm -fr /rootfs/usr/local{include,lib,share}
 finalize:
   - from: /rootfs
-    to: /
+    to: /rootfs
   - from: /pkg/manifest.yaml
     to: /

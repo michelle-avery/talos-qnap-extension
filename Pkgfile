@@ -18,4 +18,4 @@ vars:
   e2fsprogs_sha512: 2ac51f7654a44adf3ee5a5e32cecd7f129e423bdf3074c60b22a7acdba131e7dd0bb2964c107a06ae133f51836272be166f5da1f996f67ceb6c22e2636117beb
 
 labels:
-  org.opencontainers.image.source: https://github.com/michelle-avery/talos-coreutils-extension
+  org.opencontainers.image.source: https://github.com/michelle-avery/talos-qnap-extension

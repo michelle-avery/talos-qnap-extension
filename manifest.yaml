@@ -1,10 +1,10 @@
 version: v1alpha1
 metadata:
-  name: coreutils
-  version: "$VERSION"
+  name: talos-qnap-extension
+  version: "VERSION"
   author: Michelle Avery
   description: |
-    This system extension provides an instance of coreutils.
+    This system extension provides binaries required to support the QNAP CSI plugin.
   compatibility:
     talos:
       version: ">= v1.0.0"

@@ -1,0 +1,41 @@
+name: e2fsprogs
+shell: /toolchain/bin/bash
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://www.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v{{ .e2fsprogs_version }}/e2fsprogs-{{  regexReplaceAll "\\.0$" .e2fsprogs_version "${1}" }}.tar.xz
+        destination: e2fsprogs.tar.xz
+        sha256: "{{ .e2fsprogs_sha256 }}"
+        sha512: {{ .e2fsprogs_sha512 }}
+    prepare:
+      - |
+        tar -xJf e2fsprogs.tar.xz --strip-components=1
+
+        mkdir build
+        cd build
+        ../configure \
+            --sysconfdir=/etc \
+            --enable-elf-shlibs \
+            --prefix=/usr/local \
+            --enable-symlink-install \
+            --disable-fsck \
+            --disable-nls \
+     
+    build:
+      - |
+        cd build
+        make lib/ext2fs
+    install:
+      - |
+        cd build
+        touch scrub/e2scrub.conf
+
+        mkdir /rootfs
+        make install lib/ext2fs DESTDIR=/rootfs
+        rm -rf /rootfs/usr/local/{include,lib,share}
+        rm -rf /rootfs/etc
+ 
+finalize:
+  - from: /rootfs
+    to: /rootfs

@@ -1,0 +1,33 @@
+name: coreutils
+dependencies:
+  - stage: base
+  - stage: e2fsprogs
+steps:
+  - sources:
+      - url: https://ftp.gnu.org/gnu/coreutils/coreutils-{{ .coreutils_version }}.tar.xz
+        destination: coreutils.tar.xz
+        sha256: "{{ .coreutils_sha256 }}"
+        sha512: "{{ .coreutils_sha512 }}"
+    prepare:
+      - |
+        tar -xJf coreutils.tar.xz --strip-components=1
+        mkdir build
+        cd build
+        ../configure \
+            --prefix=/usr/local \
+            --enable-install-program=hostname \
+            --disable-dependency-tracking \
+            FORCE_UNSAFE_CONFIGURE=1 \
+            TIME_T_32_BIT_OK=yes
+    build:
+      - |
+        cd build
+        make -j $(nproc)
+    install:
+      - |
+        cd build
+        make DESTDIR=/rootfs install
+        rm -fr /rootfs/usr/local{include,lib,share}
+finalize:
+  - from: /rootfs
+    to: /rootfs

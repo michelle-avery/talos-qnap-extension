@@ -33,8 +33,6 @@ steps:
 
         mkdir /rootfs
         make install lib/ext2fs DESTDIR=/rootfs
-        rm -rf /rootfs/usr/local/{include,lib,share}
-        rm -rf /rootfs/etc
  
 finalize:
   - from: /rootfs

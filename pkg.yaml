@@ -16,9 +16,11 @@ steps:
       - |
         mkdir -p /rootfs_minimal/usr/local/bin
         mkdir -p /rootfs_minimal/usr/local/sbin
+        mkdir -p /rootfs_minimal/usr/local/lib
         cp /rootfs/usr/local/bin/dd /rootfs_minimal/usr/local/bin/dd
         cp /rootfs/usr/local/sbin/mkfs.ext4 /rootfs_minimal/usr/local/sbin/mkfs.ext4
         cp /rootfs/usr/local/sbin/mke2fs /rootfs_minimal/usr/local/sbin/mke2fs
+        cp /rootfs/usr/local/lib/libext2fs* /rootfs_minimal/usr/local/lib/
         
     
     test:

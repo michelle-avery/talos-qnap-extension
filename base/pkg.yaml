@@ -1,0 +1,10 @@
+name: base
+variant: scratch
+shell: /toolchain/bin/bash
+dependencies:
+  - image: "ghcr.io/siderolabs/base:v1.8.0"
+  - image: "ghcr.io/siderolabs/ca-certificates:v1.8.0"
+  - image: ghcr.io/siderolabs/extensions-validator:4313acf
+finalize:
+  - from: /
+    to: /

@@ -1,0 +1,14 @@
+# syntax = ghcr.io/siderolabs/bldr:v0.3.2
+
+format: v1alpha2
+
+vars:
+  coreutils_version: 9.5
+  coreutils_sha256: cd328edeac92f6a665de9f323c93b712af1858bc2e0d88f3f7100469470a1b8a
+  coreutils_sha512: 2ca0deac4dc10a80fd0c6fd131252e99d457fd03b7bd626a6bc74fe5a0529c0a3d48ce1f5da1d3b3a7a150a1ce44f0fbb6b68a6ac543dfd5baa3e71f5d65401c
+  make_version: 4.4.1
+  make_sha256: dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3
+  make_sha512: 145260cbd6a8226cef3dfef0c8baba31847beaebc7e6b65d39d02715fd4f4cab9b139b6c3772e550088d4f9ae80c6d3ed20b9a7664c693644dfb96b4cb60e67c
+
+labels:
+  org.opencontainers.image.source: https://github.com/michelle-avery/talos-coreutils-extension

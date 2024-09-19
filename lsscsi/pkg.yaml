@@ -1,0 +1,29 @@
+name: lsscsi
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://sg.danny.cz/scsi/lsscsi-{{ .lsscsi_version }}.tar.xz
+        destination: lsscsi.tar.xz
+        sha256: "{{ .lsscsi_sha256 }}"
+        sha512: "{{ .lsscsi_sha512 }}"
+    prepare:
+      - |
+        tar -xJf lsscsi.tar.xz --strip-components=1
+        mkdir build
+        cd build
+        ../configure \
+            --prefix=/usr/local \
+  
+    build:
+      - |
+        cd build
+        make -j $(nproc)
+    install:
+      - |
+        cd build
+        make DESTDIR=/rootfs install
+        rm -fr /rootfs/usr/local{include,lib,share}
+finalize:
+  - from: /rootfs
+    to: /rootfs

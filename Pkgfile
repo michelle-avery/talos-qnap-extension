@@ -3,7 +3,7 @@
 format: v1alpha2
 
 vars:
-  QNAP_EXTENSION_VERSION: 0.7
+  QNAP_EXTENSION_VERSION: 0.8
   coreutils_version: 9.5
   coreutils_sha256: cd328edeac92f6a665de9f323c93b712af1858bc2e0d88f3f7100469470a1b8a
   coreutils_sha512: 2ca0deac4dc10a80fd0c6fd131252e99d457fd03b7bd626a6bc74fe5a0529c0a3d48ce1f5da1d3b3a7a150a1ce44f0fbb6b68a6ac543dfd5baa3e71f5d65401c
@@ -16,6 +16,12 @@ vars:
   e2fsprogs_version: 1.47.1
   e2fsprogs_sha256: 5a33dc047fd47284bca4bb10c13cfe7896377ae3d01cb81a05d406025d99e0d1
   e2fsprogs_sha512: 2ac51f7654a44adf3ee5a5e32cecd7f129e423bdf3074c60b22a7acdba131e7dd0bb2964c107a06ae133f51836272be166f5da1f996f67ceb6c22e2636117beb
+  lsscsi_version: 0.32
+  lsscsi_sha256: a4190bfa7308d3014222f58ff139c5a284006232964e8c429e8c8f252a2ae44a
+  lsscsi_sha512: fb2214390756d8820661ac1a56da5fa69f80415b2bd94c4b68f7daeb675e5a015a017132874975538934b7d65c2ff0bb8abcee087023b1f62dc6762a09a26452
+  procps_version: 4.0.4
+  procps_sha256: 3214fab0f817d169f2c117842ba635bafb1cd6090273e311a8b5c6fc393ddb9d
+  procps_sha512: b7ba28391b71ad95fda6de25c539132face53c308402d615aa6f5bdde0b5c3de3f5b1b7623e4b1fb92dc36bc2d5b73268afda21c992ef94b1059ba0cd2b6a340
 
 labels:
   org.opencontainers.image.source: https://github.com/michelle-avery/talos-qnap-extension

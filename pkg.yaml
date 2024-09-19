@@ -4,6 +4,8 @@ dependencies:
   - stage: coreutils
   - stage: e2fsprogs
   - stage: util-linux
+  - stage: lsscsi
+  - stage: procps
 steps:
   - sources:
     prepare:
@@ -26,7 +28,9 @@ steps:
         cp /rootfs/usr/local/sbin/blockdev /rootfs_minimal/usr/local/sbin/blockdev
         cp /rootfs/usr/local/bin/mount /rootfs_minimal/usr/local/bin/mount
         cp /rootfs/usr/local/bin/cat /rootfs_minimal/usr/local/bin/cat
+        cp /rootfs/usr/local/bin/free /rootfs_minimal/usr/local/bin/free
         cp /rootfs/usr/local/bin/ls /rootfs_minimal/usr/local/bin/ls
+        cp /rootfs/usr/local/bin/lsscsi /rootfs_minimal/usr/local/bin/lsscsi
         cp -r /rootfs/usr/local/lib/* /rootfs_minimal/usr/local/lib/
         
     

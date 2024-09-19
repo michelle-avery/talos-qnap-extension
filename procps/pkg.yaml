@@ -1,0 +1,31 @@
+name: procps
+dependencies:
+  - stage: base
+steps:
+  - sources:
+      - url: https://gitlab.com/procps-ng/procps/-/archive/v{{ .procps_version }}/procps-v{{ .procps_version }}.tar.gz
+        destination: procps.tar.gz
+        sha256: "{{ .procps_sha256 }}"
+        sha512: "{{ .procps_sha512 }}"
+    prepare:
+      - |
+        tar -xzf procps.tar.gz --strip-components=1
+        mkdir build
+        cd build
+        ../autogen.sh
+        ../configure \
+            --prefix=/usr/local \
+            --without-ncurses
+    
+    build:
+      - |
+        cd build
+        make -j $(nproc)
+    install:
+      - |
+        cd build
+        make DESTDIR=/rootfs install
+  
+finalize:
+  - from: /rootfs
+    to: /rootfs

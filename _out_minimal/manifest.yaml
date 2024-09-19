@@ -1,0 +1,10 @@
+version: v1alpha1
+metadata:
+  name: talos-qnap-extension
+  version: "0.6"
+  author: Michelle Avery
+  description: |
+    This system extension provides binaries required to support the QNAP CSI plugin.
+  compatibility:
+    talos:
+      version: ">= v1.0.0"

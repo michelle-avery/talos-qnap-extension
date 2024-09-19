@@ -20,9 +20,13 @@ steps:
         mkdir -p /rootfs_minimal/usr/local/lib
         cp /rootfs/usr/local/bin/dd /rootfs_minimal/usr/local/bin/dd
         cp /rootfs/usr/local/sbin/mkfs.ext4 /rootfs_minimal/usr/local/sbin/mkfs.ext4
+        cp /rootfs/usr/local/sbin/fsck.ext4 /rootfs_minimal/usr/local/sbin/fsck.ext4
+
         cp /rootfs/usr/local/sbin/mke2fs /rootfs_minimal/usr/local/sbin/mke2fs
         cp /rootfs/usr/local/sbin/blockdev /rootfs_minimal/usr/local/sbin/blockdev
         cp /rootfs/usr/local/bin/mount /rootfs_minimal/usr/local/bin/mount
+        cp /rootfs/usr/local/bin/cat /rootfs_minimal/usr/local/bin/cat
+        cp /rootfs/usr/local/bin/ls /rootfs_minimal/usr/local/bin/ls
         cp -r /rootfs/usr/local/lib/* /rootfs_minimal/usr/local/lib/
         
     

@@ -1,0 +1,6 @@
+name: linux_utils_base
+dependencies:
+  - image: "ghcr.io/siderolabs/toolchain:v0.12.0"
+    runtime: true
+  - stage: make
+    runtime: true

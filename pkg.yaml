@@ -3,6 +3,7 @@ dependencies:
   - stage: base
   - stage: coreutils
   - stage: e2fsprogs
+  - stage: util-linux
 steps:
   - sources:
     prepare:
@@ -20,6 +21,8 @@ steps:
         cp /rootfs/usr/local/bin/dd /rootfs_minimal/usr/local/bin/dd
         cp /rootfs/usr/local/sbin/mkfs.ext4 /rootfs_minimal/usr/local/sbin/mkfs.ext4
         cp /rootfs/usr/local/sbin/mke2fs /rootfs_minimal/usr/local/sbin/mke2fs
+        cp /rootfs/usr/local/sbin/blockdev /rootfs_minimal/usr/local/sbin/blockdev
+        cp /rootfs/usr/local/bin/mount /rootfs_minimal/usr/local/bin/mount
         cp -r /rootfs/usr/local/lib/* /rootfs_minimal/usr/local/lib/
         
     
